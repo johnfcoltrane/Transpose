@@ -14,6 +14,15 @@ var tbl= [
 	['A#','Bb'],
 	['B','B']];
 
+function inc(x) {
+	for(i=0; i<tbl.length; i++) {
+		if (tbl[i][0] == x || tbl[i][1] == x) {
+			return tbl[(i+1)%12];
+		}
+	}
+	return "";
+}
+
 function test1() {
 	for(i=0; i<tbl.length; i++) {
 		document.write(tbl[i][0]+"/"+tbl[i][1]+"<br>");
@@ -25,6 +34,13 @@ function f1() {
 	var x = document.getElementById('txt1');
 	alert(x.value);
 }
+
+function test2() {
+var x1 = document.getElementById('txt2').value;
+var x2 = document.getElementById('txt3').value;
+alert(inc(x1));
+}
+
 </script>
 
 
@@ -37,6 +53,9 @@ _onclick='f1()'>
 </textarea>
 <br>
 <input type=button name=btn1 value="***" onclick="f1()">
-<input type=button name=btn1 value="***" onclick="test1()">
-
+<input type=button name=btn2 value="***" onclick="test1()">
+<br>
+<input type=text id=txt2>
+<input type=text id=txt3>
+<input type=button name=btn3 value="***" onclick="test2()">
 </html>
