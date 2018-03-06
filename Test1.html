@@ -1,0 +1,42 @@
+<html>
+<script>
+var tbl= [
+	['C','C'],
+	['C#','Db'],
+	['D','D'],
+	['D#','Eb'],
+	['E','E'],
+	['F','F'],
+	['F#','Gb'],
+	['G','G'],
+	['G#','Ab'],
+	['A','A'],
+	['A#','Bb'],
+	['B','B']];
+
+function test1() {
+	for(i=0; i<tbl.length; i++) {
+		document.write(tbl[i][0]+"/"+tbl[i][1]+"<br>");
+	}
+}
+
+function f1() {
+	//alert(1);
+	var x = document.getElementById('txt1');
+	alert(x.value);
+}
+</script>
+
+
+<textarea id=txt1 width=80 height=80 length=80 
+style="margin: 0px; width: 618px; height: 435px;"
+_onclick='f1()'>
+
+| Dm7 G7  | Em7 A7  | D7 Db7 | C |
+
+</textarea>
+<br>
+<input type=button name=btn1 value="***" onclick="f1()">
+<input type=button name=btn1 value="***" onclick="test1()">
+
+</html>
