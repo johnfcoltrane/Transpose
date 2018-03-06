@@ -15,7 +15,7 @@ var tbl= [
 	['B','B']];
 
 function inc(x) {
-	for(i=0; i<tbl.length; i++) {
+	for(var i=0; i<tbl.length; i++) {
 		if (tbl[i][0] == x || tbl[i][1] == x) {
 			return tbl[(i+1)%12];
 		}
@@ -23,22 +23,49 @@ function inc(x) {
 	return "";
 }
 
-function test1() {
-	for(i=0; i<tbl.length; i++) {
-		document.write(tbl[i][0]+"/"+tbl[i][1]+"<br>");
+function scan(x) {
+	//alert(length(x));
+	var buf = "";
+	for(var i=0; i<x.length; i++) {
+		//alert(x.length);
+		var c  = x.substring(i, i+1);
+		var c1 = x.substring(i+1, i+2);
+		var a;
+		if (c>='A' && c<='G') {
+			if (c1 == '#' || c1 == 'b') {
+				a = c + c1;
+				i++;
+			}
+			else {
+				a = c;
+			}
+			//alert("a="+a);
+			c = inc(a)[0];
+			//c = a;
+		}
+		//document.write("== "+c+"<br>");
+		buf += c;
 	}
+	alert(buf);
+}
+
+function test1() {
+	var x1 = document.getElementById('txt2').value;
+	alert(inc(x1));
 }
 
 function f1() {
 	//alert(1);
-	var x = document.getElementById('txt1');
-	alert(x.value);
+	//var x = document.getElementById('txt1');
+	var x1 = document.getElementById('txt2').value;
+	alert(inc(x1)[0]);
 }
 
 function test2() {
 var x1 = document.getElementById('txt2').value;
 var x2 = document.getElementById('txt3').value;
-alert(inc(x1));
+alert('scan');
+scan(document.getElementById('txt1').value);
 }
 
 </script>
@@ -53,9 +80,10 @@ _onclick='f1()'>
 </textarea>
 <br>
 <input type=button name=btn1 value="***" onclick="f1()">
-<input type=button name=btn2 value="***" onclick="test1()">
+<br>
+<input type=button name=btn2 value="inc" onclick="test1()">
 <br>
 <input type=text id=txt2>
 <input type=text id=txt3>
-<input type=button name=btn3 value="***" onclick="test2()">
+<input type=button name=btn3 value="test2()" onclick="test2()">
 </html>
