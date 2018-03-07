@@ -40,13 +40,13 @@ function scan(x) {
 				a = c;
 			}
 			//alert("a="+a);
-			c = inc(a)[0];
+			c = inc(a)[1];
 			//c = a;
 		}
 		//document.write("== "+c+"<br>");
 		buf += c;
 	}
-	alert(buf);
+	return(buf);
 }
 
 function test1() {
@@ -54,18 +54,20 @@ function test1() {
 	alert(inc(x1));
 }
 
-function f1() {
+function _transpose() {
 	//alert(1);
 	//var x = document.getElementById('txt1');
 	var x1 = document.getElementById('txt2').value;
 	alert(inc(x1)[0]);
 }
 
-function test2() {
-var x1 = document.getElementById('txt2').value;
-var x2 = document.getElementById('txt3').value;
-alert('scan');
-scan(document.getElementById('txt1').value);
+function transpose() {
+	//var x1 = document.getElementById('txt2').value;
+	//var x2 = document.getElementById('txt3').value;
+	//alert('scan');
+	var x = scan(document.getElementById('txt1').value);
+	alert(x);
+	//return x;
 }
 
 </script>
@@ -79,7 +81,7 @@ _onclick='f1()'>
 
 </textarea>
 <br>
-<input type=button name=btn1 value="***" onclick="f1()">
+<input type=button name=btn1 value="transpose" onclick="transpose()">
 <br>
 <input type=button name=btn2 value="inc" onclick="test1()">
 <br>
