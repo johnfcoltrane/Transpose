@@ -14,6 +14,7 @@ var tbl= [
 	['A#','Bb'],
 	['B','B']];
 
+// inc(x, n)
 function inc(x) {
 	for(var i=0; i<tbl.length; i++) {
 		if (tbl[i][0] == x || tbl[i][1] == x) {
@@ -61,6 +62,7 @@ function _transpose() {
 	alert(inc(x1)[0]);
 }
 
+// transpose(n)
 function transpose() {
 	//var x1 = document.getElementById('txt2').value;
 	//var x2 = document.getElementById('txt3').value;
@@ -70,9 +72,15 @@ function transpose() {
 	//return x;
 }
 
+function fnChange() {
+	var x = 1;
+	x = document.getElementById('sel1').selectedIndex;
+	alert('changed:'+x);
+}
+
 </script>
 
-<select name="example" id=sel1>
+<select name="example" id=sel1 onchange="fnChange()">
 <option value="-">-</option>
 <option value="#">#</option>
 <option value="2nd">2nd</option>
@@ -83,8 +91,8 @@ function transpose() {
 <option value="5th">5th</option>
 <option value="+5t">+5t</option>
 <option value="6th">6th</option>
-<option value="maj7">maj7</option>
 <option value="7th">7th</option>
+<option value="maj7">maj7</option>
 </select>
 <br>
 
