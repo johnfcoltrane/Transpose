@@ -14,17 +14,17 @@ var tbl= [
 	['A#','Bb'],
 	['B','B']];
 
-// inc(x, n)
-function inc(x) {
+//TODO: inc(x, n)
+function inc(x, n) {
 	for(var i=0; i<tbl.length; i++) {
 		if (tbl[i][0] == x || tbl[i][1] == x) {
-			return tbl[(i+1)%12];
+			return tbl[(i+n)%12];
 		}
 	}
-	return "";
+	return x;
 }
 
-function scan(x) {
+function scan(x, n) {
 	//alert(length(x));
 	var buf = "";
 	for(var i=0; i<x.length; i++) {
@@ -41,7 +41,7 @@ function scan(x) {
 				a = c;
 			}
 			//alert("a="+a);
-			c = inc(a)[1];
+			c = inc(a, n)[1];
 			//c = a;
 		}
 		//document.write("== "+c+"<br>");
@@ -62,14 +62,14 @@ function _transpose() {
 	alert(inc(x1)[0]);
 }
 
-// transpose(n)
-function transpose() {
+//TODO: transpose(n)
+function transpose(n) {
 	//var x1 = document.getElementById('txt2').value;
 	//var x2 = document.getElementById('txt3').value;
 	//alert('scan');
-	var x = scan(document.getElementById('txt1').value);
-	alert(x);
-	//return x;
+	var x = scan(document.getElementById('txt1').value, n);
+	//alert(x);
+	document.getElementById('txt1').value = x;
 }
 
 function fnChange() {
@@ -103,6 +103,10 @@ _onclick='f1()'>
 | Dm7 G7  | Em7 A7  | D7 Db7 | C |
 
 </textarea>
+<br>
+
+<input type=button value="-" onclick="transpose(11)">
+<input type=button value="+" onclick="transpose(1)">
 <br>
 
 <!--
