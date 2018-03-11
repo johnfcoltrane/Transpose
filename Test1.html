@@ -15,13 +15,16 @@ var tbl= [
 	['B','B']];
 
 //TODO: inc(x, n)
+/***
+ * ƒR[ƒh‚ğˆÚ’²‚·‚é
+ */
 function inc(x, n) {
 	for(var i=0; i<tbl.length; i++) {
 		if (tbl[i][0] == x || tbl[i][1] == x) {
 			return tbl[(i+n)%12];
 		}
 	}
-	return x;
+	return [x,x];
 }
 
 function scan(x, n) {
@@ -55,18 +58,11 @@ function test1() {
 	alert(inc(x1));
 }
 
-function _transpose() {
-	//alert(1);
-	//var x = document.getElementById('txt1');
-	var x1 = document.getElementById('txt2').value;
-	alert(inc(x1)[0]);
-}
-
 //TODO: transpose(n)
+/***
+ * 
+ */
 function transpose(n) {
-	//var x1 = document.getElementById('txt2').value;
-	//var x2 = document.getElementById('txt3').value;
-	//alert('scan');
 	var x = scan(document.getElementById('txt1').value, n);
 	//alert(x);
 	document.getElementById('txt1').value = x;
