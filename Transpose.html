@@ -5,6 +5,8 @@
 -->
 </style>
 <script>
+var repTbl;
+var repTblIdxs;
 var current_ix = 0;
 var tbl= [
 	['C','C'],
@@ -96,12 +98,26 @@ function getReplaces() {
 	var o3 = document.getElementById('rep3').options;
 	var o4 = document.getElementById('rep4').options;
 	var o5 = document.getElementById('rep5').options;
-	var reptbl = [o1,o2,o3,o4,o5];
+	repTbl = [
+		[o1[0].value, o1[1].value],
+		[o2[0].value, o2[1].value],
+		[o3[0].value, o3[1].value],
+		[o4[0].value, o4[1].value],
+		[o5[0].value, o5[1].value],
+		];
+	repTblIdxs = [
+		o1.selectedIndex,
+		o2.selectedIndex,
+		o3.selectedIndex,
+		o4.selectedIndex,
+		o5.selectedIndex,
+		];
 	var msg="";
-	for(var i=0; i<reptbl.length; i++) {
-		msg += '/'+reptbl[i][0].value+","+reptbl[i][1].value;
+	for(var i=0; i<repTbl.length; i++) {
+		msg += '/'+repTbl[i][0]+","+repTbl[i][1];
 	}
 	alert(msg);
+	alert(repTblIdxs);
 }
 
 </script>
