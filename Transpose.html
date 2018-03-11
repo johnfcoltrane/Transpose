@@ -26,14 +26,16 @@ var tbl= [
 function inc(x, n) {
 	for(var i=0; i<tbl.length; i++) {
 		if (tbl[i][0] == x || tbl[i][1] == x) {
-			return tbl[(i+n)%12];
+			var ret = tbl[(i+n)%12];
+			return ret;
 		}
 	}
 	return [x,x];
 }
 
 function scan(x, n) {
-	//alert(length(x));
+	//alert("scan n="+n);
+	//alert("scan x="+x);
 	var buf = "";
 	for(var i=0; i<x.length; i++) {
 		//alert(x.length);
@@ -49,7 +51,9 @@ function scan(x, n) {
 				a = c;
 			}
 			//alert("a="+a);
+			console.log("a="+a+" n="+n);
 			c = inc(a, n)[1];
+			console.log("c="+c);
 			//c = a;
 		}
 		//document.write("== "+c+"<br>");
@@ -60,7 +64,7 @@ function scan(x, n) {
 
 function test1() {
 	var x1 = document.getElementById('txt2').value;
-	alert(inc(x1));
+	//alert(inc(x1));
 }
 
 //TODO: transpose(n)
@@ -68,32 +72,37 @@ function test1() {
  * 
  */
 function transpose(n) {
-	var x = scan(document.getElementById('txt1').value, n);
+	//alert("transpose("+n+")");
+	var txt = document.getElementById('txt1').value;
+	//alert("transpose:"+txt);
+	var x = scan(txt, n);
 	//alert(x);
 	document.getElementById('txt1').value = x;
 }
 
 function fnChange() {
-	var x = 1;
-	x = document.getElementById('sel1').selectedIndex;
-	alert('changed:'+x);
+	var ix = 1;
+	ix = document.getElementById('sel1').selectedIndex;
+	var o = document.getElementById('sel1').options;
+	//alert('n:'+o[ix].value);
+	transpose(parseInt(o[ix].value));
 }
 
 </script>
 
 <select name="example" id=sel1 onchange="fnChange()">
-<option value="-">-</option>
-<option value="#">#</option>
-<option value="2nd">2nd</option>
-<option value="b3">b3</option>
-<option value="3rd">3rd</option>
-<option value="4th">4th</option>
-<option value="b5">b5</option>
-<option value="5th">5th</option>
-<option value="+5t">+5t</option>
-<option value="6th">6th</option>
-<option value="7th">7th</option>
-<option value="maj7">maj7</option>
+<option value="0">-</option>
+<option value="1">#</option>
+<option value="2">2nd</option>
+<option value="3">b3</option>
+<option value="4">3rd</option>
+<option value="5">4th</option>
+<option value="6">b5</option>
+<option value="7">5th</option>
+<option value="8">+5t</option>
+<option value="9">6th</option>
+<option value="10">7th</option>
+<option value="11">maj7</option>
 </select>
 <br>
 
