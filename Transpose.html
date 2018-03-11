@@ -90,6 +90,20 @@ function fnChange() {
 	current_ix = n;
 }
 
+function getReplaces() {
+	var o1 = document.getElementById('rep1').options;
+	var o2 = document.getElementById('rep2').options;
+	var o3 = document.getElementById('rep3').options;
+	var o4 = document.getElementById('rep4').options;
+	var o5 = document.getElementById('rep5').options;
+	var reptbl = [o1,o2,o3,o4,o5];
+	var msg="";
+	for(var i=0; i<reptbl.length; i++) {
+		msg += '/'+reptbl[i][0].value+","+reptbl[i][1].value;
+	}
+	alert(msg);
+}
+
 </script>
 
 <select name="example" id=sel1 onchange="fnChange()">
@@ -121,29 +135,29 @@ _onclick='f1()' class="textstyle1">
 <input type=button value="+" onclick="transpose(1)">
 <br>
 
-<select>
+<select id=rep5>
 <option value="Bb">Bb</option>
 <option value="A#">A#</option>
 </select>
 
-<select>
+<select id=rep4>
 <option value="Ab">Ab</option>
 <option value="G#">G#</option>
 </select>
 
-<select>
+<select id=rep3>
 <option value="Gb">Gb</option>
 <option value="F#">F#</option>
 </select>
 
-<select>
+<select id=rep2>
 <option value="Eb">Eb</option>
 <option value="D#">D#</option>
 </select>
 
-<select>
+<select id=rep1>
 <option value="Db">Db</option>
 <option value="C#">C#</option>
 </select>
-
+<br><input type=button value="***" onclick="getReplaces()">
 </html>
