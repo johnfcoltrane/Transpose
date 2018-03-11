@@ -5,6 +5,7 @@
 -->
 </style>
 <script>
+var current_ix = 0;
 var tbl= [
 	['C','C'],
 	['C#','Db'],
@@ -26,7 +27,7 @@ var tbl= [
 function inc(x, n) {
 	for(var i=0; i<tbl.length; i++) {
 		if (tbl[i][0] == x || tbl[i][1] == x) {
-			var ret = tbl[(i+n)%12];
+			var ret = tbl[(i+n+12)%12];
 			return ret;
 		}
 	}
@@ -81,11 +82,12 @@ function transpose(n) {
 }
 
 function fnChange() {
-	var ix = 1;
-	ix = document.getElementById('sel1').selectedIndex;
+	var ix = document.getElementById('sel1').selectedIndex;
 	var o = document.getElementById('sel1').options;
-	//alert('n:'+o[ix].value);
-	transpose(parseInt(o[ix].value));
+	var n = parseInt(o[ix].value);
+	//alert('fnChange n:'+n+" current_ix:"+current_ix);
+	transpose(n - current_ix);
+	current_ix = n;
 }
 
 </script>
