@@ -1,0 +1,36 @@
+<html>
+<script>
+function fnChange() {
+var i = document.getElementById('sel1').selectedIndex;
+var v = document.getElementById('sel1').options[i].value;
+//alert(v);
+//var x = 
+document.getElementById('txt1').style.fontSize = v;
+}
+</script>
+<head>
+<title>テキストエリアの文字の大きさを変える</title>
+<!--
+	.big { font-size:48pt; }
+-->
+<style type="text/css">
+    <!--
+    .class_big { font-size:24pt; }
+    -->
+</style>
+</head> 
+<body>
+
+<select id='sel1' onchange="fnChange()">
+<option value="48pt">48pt</option>
+<option value="32pt">32pt</option>
+<option value="24pt" selected>24pt</option>
+<option value="12pt">12pt</option>
+<option value="6pt">6pt</option>
+
+</select>
+<form>
+<textarea id="txt1" class="class_big">あいうえお～</textarea>
+</form>
+</body>
+</html>
