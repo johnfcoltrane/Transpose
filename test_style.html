@@ -6,8 +6,14 @@ function fnChangeFontSize(name, target) {
     document.getElementById(target).style.fontSize = v;
 }
 
+/***
+ * フォントサイズ保存
+ */
 var g_fontsize = 24;
 
+/***
+ * フォントサイズを更新
+ */
 function fnUpdateFontSize(target, n){
 	//alert(target);
 	//alert(document.getElementById(target).style);
@@ -16,6 +22,9 @@ function fnUpdateFontSize(target, n){
 	//alert(x);
 }
 
+/***
+ * セーブ
+ */
 function fnSave() {
 
 	window.localStorage.setItem('fontsize', g_fontsize);
@@ -23,6 +32,9 @@ function fnSave() {
 
 }
 
+/***
+ * ロード
+ */
 function fnLoad() {
 	g_fontsize = parseInt(window.localStorage.getItem('fontsize'));
 	//alert("Loaded:"+g_fontsize);
@@ -38,8 +50,10 @@ function fnLoad() {
     -->
 </style>
 </head> 
+
 <body onload="fnLoad()">
 
+<!-- コンボボックス -->
 <select id='selFontSize' onchange="fnChangeFontSize('selFontSize', 'txt1')">
     <option value="48pt">48pt</option>
     <option value="32pt">32pt</option>
@@ -47,11 +61,16 @@ function fnLoad() {
     <option value="12pt">12pt</option>
     <option value="6pt">6pt</option>
 </select>
+
+<!-- +/-ボタン -->
 <input type=button value="-" onclick="fnUpdateFontSize('txt1', -1)">
 <input type=button value="+" onclick="fnUpdateFontSize('txt1',  1)">
 <input type=button value="Save" onclick="fnSave()">
 <form>
+
+<!-- テキストボックス -->
 <textarea id="txt1" class="class_big">あいうえお～</textarea>
+
 </form>
 </body>
 </html>
