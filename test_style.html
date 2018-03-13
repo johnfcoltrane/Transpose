@@ -5,6 +5,14 @@ function fnChangeFontSize(name, target) {
     var v = document.getElementById(name).options[i].value;
     document.getElementById(target).style.fontSize = v;
 }
+var g_fontsize = 24;
+function fnUpdateFontSize(target, n){
+	//alert(target);
+	//alert(document.getElementById(target).style);
+	g_fontsize += n;
+	document.getElementById(target).style.fontSize = (g_fontsize)+'pt';
+	//alert(x);
+}
 </script>
 <head>
 <title>テキストエリアの文字の大きさを変える</title>
@@ -23,6 +31,8 @@ function fnChangeFontSize(name, target) {
     <option value="12pt">12pt</option>
     <option value="6pt">6pt</option>
 </select>
+<input type=button value="-" onclick="fnUpdateFontSize('txt1', -1)">
+<input type=button value="+" onclick="fnUpdateFontSize('txt1',  1)">
 <form>
 <textarea id="txt1" class="class_big">あいうえお～</textarea>
 </form>
