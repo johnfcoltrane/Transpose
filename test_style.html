@@ -1,8 +1,8 @@
 <html>
 <script>
-function fnChange() {
-var i = document.getElementById('sel1').selectedIndex;
-var v = document.getElementById('sel1').options[i].value;
+function fnChangeFontSize(name) {
+var i = document.getElementById(name).selectedIndex;
+var v = document.getElementById(name).options[i].value;
 //alert(v);
 //var x = 
 document.getElementById('txt1').style.fontSize = v;
@@ -21,7 +21,7 @@ document.getElementById('txt1').style.fontSize = v;
 </head> 
 <body>
 
-<select id='sel1' onchange="fnChange()">
+<select id='selFontSize' onchange="fnChangeFontSize('selFontSize')">
 <option value="48pt">48pt</option>
 <option value="32pt">32pt</option>
 <option value="24pt" selected>24pt</option>
