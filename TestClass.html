@@ -1,0 +1,29 @@
+<script>
+function debug(x) {
+	document.write(x+'<br>');
+}
+
+/***
+ * クラスサンプル
+ */
+function Count(n) {
+	this.count = n;
+	this.getCount = function() {return this.count;};
+	this.countup = function(n) {
+			if (isNaN(n)) { //パラメータが指定されなかった
+				this.count++;
+			}
+			else {
+				this.count+=n;
+			}
+		};
+}
+
+var i;
+var obj = new Count(100);
+for(i=0; i<10; i++) {
+	debug('i='+i);
+	obj.countup();
+}
+debug('count:'+obj.getCount());
+</script>
