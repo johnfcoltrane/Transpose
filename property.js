@@ -32,8 +32,8 @@ function fnSave() {
 	window.localStorage.setItem('textarea', g_properties.textarea);
 	
 	alert("Saved:"+g_properties.textarea);
-	var t = window.localStorage.getItem('textarea');
-	alert('t='+t);
+	//var t = window.localStorage.getItem('textarea');
+	//alert('t='+t);
 
 }
 function fnTest1() {
@@ -47,7 +47,7 @@ function fnTest1() {
 function fnLoad() {
 	g_properties.fontsize = parseInt(window.localStorage.getItem('fontsize'));
 	g_properties.textarea = window.localStorage.getItem('textarea');
-	alert('text:'+g_properties.textarea);
+	//alert('text:'+g_properties.textarea);
 	fnUpdateFontSize('txt1', 0);
 	document.getElementById('txt1').value = g_properties.textarea;
 }
