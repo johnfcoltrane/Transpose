@@ -1,0 +1,24 @@
+<script>
+function debug(x) {
+document.write(x+'<br>');
+}
+
+</script>
+<textarea id='txt1'>
+aaaaaaaa
+bbbbbbbb
+cccccccc
+</textarea>
+
+<script>
+var t = document.getElementById('txt1').value;
+debug('<pre>');
+debug('t='+t);
+debug('</pre>');
+var a = t.split('\n');
+debug('a='+a);
+for(var i=0; i<a.length; i++) {
+	debug('a[i]='+a[i]);
+}
+
+</script>
