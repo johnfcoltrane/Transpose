@@ -4,6 +4,7 @@
 .textstyle1 { font-size:24pt; }
 -->
 </style>
+<script src="property.js"></script>
 <script>
 var repTbl;
 var repTblIdxs;
@@ -144,7 +145,7 @@ function mod_index(n) {
 }
 
 </script>
-<body onload="getReplaces()">
+<body onload="fnLoad();getReplaces();">
 <select name="example" id=sel1 onchange="fnChange()">
 <option value="0">-</option>
 <option value="1">#</option>
@@ -159,6 +160,11 @@ function mod_index(n) {
 <option value="10">7th</option>
 <option value="11">maj7</option>
 </select>
+<!-- +/-ƒ{ƒ^ƒ“ -->
+<input type=button value="-" onclick="fnUpdateFontSize('txt1', -1)">
+<input type=button value="+" onclick="fnUpdateFontSize('txt1',  1)">
+<input type=button value="Save" onclick="fnSave()">
+
 <br>
 
 <textarea id=txt1 width=80 height=80 length=80 

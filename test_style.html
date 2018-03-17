@@ -1,0 +1,19 @@
+<html>
+<script src="property.js">
+</script>
+<head>
+<title>テキストエリアの文字の大きさを変える</title>
+</head> 
+
+<body onload="fnLoad()">
+
+<!-- +/-ボタン -->
+<input type=button value="-" onclick="fnUpdateFontSize('txt1', -1)">
+<input type=button value="+" onclick="fnUpdateFontSize('txt1',  1)">
+<input type=button value="Save" onclick="fnSave()">
+<br>
+<!-- テキストボックス -->
+<textarea id="txt1">あいうえお～</textarea>
+
+</body>
+</html>
