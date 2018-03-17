@@ -1,4 +1,7 @@
 <script>
+var i;
+var obj = new Count(100);
+
 function debug(x) {
 	document.write(x+'<br>');
 }
@@ -19,11 +22,12 @@ function Count(n) {
 		};
 }
 
-var i;
-var obj = new Count(100);
+obj.cnt = 0;
 for(i=0; i<10; i++) {
 	debug('i='+i);
 	obj.countup();
+	obj.cnt++;
 }
 debug('count:'+obj.getCount());
+debug('cnt:'+obj.cnt);
 </script>
