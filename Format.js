@@ -4,12 +4,13 @@
 function formatLine(x) {
 var buf = "";
 var pos=0;
+var nn = 8;
 	for(var i=0; i<x.length; i++) {
 		if (x.substr(i, 1)=='|') {
 			//print('i='+i);
 			var r;
-			if (r=pos%8>0) {
-				var n = 8 - r;
+			if (r=pos%nn>0) {
+				var n = nn - r;
 				for(var j=0; j<n; j++) {
 					buf += ' ';
 					pos+=1;
