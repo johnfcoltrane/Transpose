@@ -5,6 +5,7 @@
 -->
 </style>
 <script src="property.js"></script>
+<script src="Format.js"></script>
 <script>
 var repTbl;
 var repTblIdxs;
@@ -177,8 +178,9 @@ _onclick='f1()' class="textstyle1">
 </textarea>
 <br>
 
-<input type=button value="-" onclick="transpose(11)">
+<input type=button value="-" onclick="transpose(11)"> 
 <input type=button value="+" onclick="transpose(1)">
+<input type=button value="Format" onclick="formatTextarea('txt1')">
 <br>
 
 <select id=rep5 onchange="mod_index(5)">
