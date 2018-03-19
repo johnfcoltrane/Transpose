@@ -1,0 +1,63 @@
+<script>
+function print(x) {
+	document.write(x+"<br>");
+}
+
+function put(x) {
+	document.write(x);
+}
+
+print("Hello!");
+print("This is a pen.");
+print("This is an apple.");
+
+function formatLine(x) {
+var buf = "";
+var pos=0;
+	for(var i=0; i<x.length; i++) {
+		if (x.substr(i, 1)=='|') {
+			print('i='+i);
+			var r;
+			if (r=pos%8>0) {
+				var n = 8 - r;
+				for(var j=0; j<n; j++) {
+					buf += ' ';
+					pos+=1;
+				}
+			}
+			buf += x.substr(i, 1);
+			pos+=1;
+		}
+		else {
+			buf += x.substr(i, 1);
+			pos+=1;
+		}
+	}
+	//print("line="+buf);
+	return(buf);
+}
+put("<pre>");
+var x = formatLine("|A|B|C|D|");
+print("line:"+x);
+put("</pre>");
+</script>
+<textarea id=txt1 style="margin: 0px; width: 618px; height: 435px;">
+|a|b|c|d|E|
+|a|b|c|d|E|
+|a|b|c|d|E|
+</textarea>
+<script>
+var s = document.getElementById('txt1').value;
+function formatText(t) {
+	var a = t.split('\n');
+	var buf = '';
+	print('');
+	for(var i=0; i<a.length; i++) {
+		//print('a[]='+a[i]);
+		buf += formatLine(a[i])+"\n";
+	}
+	return(buf);
+}
+var x = formatText(s);
+put("<pre>"+x+"</pre>");
+</script>
