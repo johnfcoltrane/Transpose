@@ -41,3 +41,6 @@ function formatText(t) {
 	return(buf);
 }
 
+function formatTextarea(nm) {
+	document.getElementById(nm).value=formatText(document.getElementById(nm).value);
+}
