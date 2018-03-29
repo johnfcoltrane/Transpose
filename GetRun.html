@@ -1,0 +1,29 @@
+<script>
+function print(x) {
+	document.write(x+"<br>");
+}
+print("Hello!");
+function getRun(s, i) {
+	var run = 0;
+	for(var j=i; j<s.length; j++) {
+		if (s.substr(j, 1)==' ') {
+			//print('j='+j+s.substr(i, 1));
+			run++;
+		}
+		else {
+			//print('[A]');
+			//print('ch="'+s.substr(i,1)+'"');
+			return(run);
+		}
+	}
+	//print('[B]');
+	return(run);
+}
+var s = '1234567';
+//print(s.substring(1,3));
+//print(s.substr(1,3));
+print(getRun('   ', 0));
+print(getRun('a   ', 0));
+print(getRun('a   ', 1));
+print(getRun('a      bb**', 1));
+</script>
