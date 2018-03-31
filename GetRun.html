@@ -4,6 +4,9 @@ function print(x) {
 }
 print("Hello!");
 
+/***
+ * 連続スペースの長さを取得
+ */
 function getRun(s, i) {
 	var run = 0;
 	for(var j=i; j<s.length; j++) {
@@ -17,6 +20,9 @@ function getRun(s, i) {
 	return(run);
 }
 
+/***
+ * 連続スペースを取り除く
+ */
 function trimSpace(s) {
 	var buf = '';
 	var next_p;
