@@ -7,7 +7,7 @@ print("Hello!");
 /***
  * 連続スペースの長さを取得
  */
-function getRun(s, i) {
+function getRunLength(s, i) {
 	var run = 0;
 	for(var j=i; j<s.length; j++) {
 		if (s.substr(j, 1)==' ') {
@@ -28,7 +28,7 @@ function trimSpace(s) {
 	var next_p;
 	for(next_p=0; next_p<s.length; ) {
 		if (s.substr(next_p, 1)==' ') {
-			var run = getRun(s, next_p);
+			var run = getRunLength(s, next_p);
 			if (run >= 8) {
 				next_p += 8;
 			}
