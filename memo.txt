@@ -1,0 +1,5 @@
+github‚Ö‚Ì“o˜^‚Í
+HTTPS‚Ì•û‚Å‚â‚Á‚Ä‚éB
+
+git remote add origin https://github.com/johnfcoltrane/Transpose.git
+git push -u origin master

@@ -1,0 +1,33 @@
+<script src="Format.js"></script>
+<script>
+function print(x) {
+	document.write(x+"<br>");
+}
+
+function put(x) {
+	document.write(x);
+}
+/***
+	print("Hello!");
+	print("This is a pen.");
+	print("This is an apple.");
+	put("<pre>");
+	var x = formatLine("|A|B|C|D|");
+	print("line:"+x);
+	put("</pre>");
+***/
+</script>
+<textarea id=txt1 style="margin: 0px; width: 618px; height: 435px;">
+|a|b|c|d|E|
+|a|b|c|d|E|
+|a|b|c|d|E|
+</textarea>
+<br>
+<input type=button value="Format" onclick="formatTextarea('txt1')">
+<script>
+/***
+	var s = document.getElementById('txt1').value;
+	var x = formatText(s);
+	put("<pre>"+x+"</pre>");
+***/
+</script>
